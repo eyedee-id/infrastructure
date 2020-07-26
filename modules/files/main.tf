@@ -1,7 +1,9 @@
 module "s3_bucket" {
-  source     = "terraform-aws-modules/s3-bucket/aws"
-  bucket     = "files.eyedee.id"
-  acl        = "public-read"
+  source = "terraform-aws-modules/s3-bucket/aws"
+  bucket = "files.eyedee.id"
+  region = var.region
+  acl    = "public-read"
+
   versioning = {
     enabled = false
   }
