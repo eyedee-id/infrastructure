@@ -4,6 +4,12 @@ module "s3_bucket" {
   region = var.region
   acl    = "public-read"
 
+  website = {
+    index_document = "index.html"
+  }
+
+  policy = file("policy.json")
+
   versioning = {
     enabled = false
   }
