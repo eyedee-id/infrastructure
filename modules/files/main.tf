@@ -8,7 +8,7 @@ module "s3_bucket" {
     index_document = "index.html"
   }
 
-  policy = file("policy.json")
+  policy = file("${path.module}/policy.json")
 
   versioning = {
     enabled = false
